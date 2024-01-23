@@ -1,0 +1,69 @@
+- Download image from Docker hub to local merchant
+
+	docker pull {image_name}:{tag_version}
+	docker pull redis:7.0
+
+
+- Create container from Image by image name and run container
+
+	docker run {image_name}:{tag_version}
+	docker run redis:7.0
+
+
+- build docker image
+
+	docker build . -t fylyheng-corebacking/account
+
+
+- run docker container
+
+	docker run -p 8102:8102 corebacking/account
+	docker run -d -p 8102:8102 corebacking/account ( -d mean close track-log) exist the container after run
+
+
+
+- View running docker container
+- By view docker running container it will show us the list of images running with container_id , name, status
+
+	docker ps
+
+
+- View all exist container we need to add option '-a' or '--all'
+
+	docker ps -a
+
+
+
+** By default after run docker image it will block terminal at docker image log , (like tomcat_tail -f catalina.out)
+   So to unblock the terminal we need to using option '-d'
+
+	docker run -d {image_name}:{tag_version}
+	docker run -d redis:7.0
+
+
+
+- View docker image(container) log by using container_id from list
+
+	docker logs {container_id, name}
+	docker logs 18824afbcd
+	docker logs -f 18824afbcd (-f for real-time console-log)
+
+
+
+
+- Docker run : It not re-use the last created, instand It will create a new one with a new container_id
+- To re-use the existed container we can use
+
+	docker start {container_id, name}
+	docker start 18824afbcd
+
+
+- To stop docker container
+
+	docker stop {container id, name}
+	docker stop 18824afbcd
+
+
+- To remove unuse container instant
+
+    docker system prune
