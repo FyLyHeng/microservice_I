@@ -12,10 +12,8 @@ ENTRYPOINT ["java", "-jar", "/account-1-0-0.jar"]
 
 
 #run docker container
-
 #docker run -p 8102:8102 corebacking/account  ->track mode
 #docker run -d -p 8102:8102 corebacking/account  ->detect mode (close track-log)
-
 
 
 #check service log
