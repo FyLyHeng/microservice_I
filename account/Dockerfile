@@ -7,20 +7,18 @@ COPY target/account-0.0.1-SNAPSHOT.jar account-1-0-0.jar
 ENTRYPOINT ["java", "-jar", "/account-1-0-0.jar"]
 
 
+
+
+#mvn build jar.file cmd
+# mvn clean package -P staging -Dmaven.test.skip
+# mvn clean package -Dmaven.test.skip
+
 #build docker image cmd
-#docker build . -t fylyheng-corebacking/account
+# docker build . -t fylyheng/cb-account-service
 
 
 #run docker container
-#docker run -p 8102:8102 corebacking/account  ->track mode
-#docker run -d -p 8102:8102 corebacking/account  ->detect mode (close track-log)
+#docker run --name account_service -p 8102:8102 fylyheng/cb-account-service  ->track mode
+#docker run --name account_service -d -p 8102:8102 fylyheng/cb-account-service  ->detect mode (close track-log)
 
 
-#check service log
-#docekr logs {container_id} //view exist log
-#docekr logs -f {container_id} //view real-time log
-# ex : docekr log ec0f8cbb206e
-
-
-#start existing image
-#docker start corebacking/account

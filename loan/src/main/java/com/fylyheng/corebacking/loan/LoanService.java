@@ -29,7 +29,7 @@ public class LoanService implements ILoanService {
 
     @Override
     public Loan getById(Long accountId) {
-        return loanRepo.findById(accountId).orElseThrow( () -> new RuntimeException("Loan Not Found"));
+        return loanRepo.findByLoanId(accountId).orElseThrow( () -> new RuntimeException("Loan Not Found"));
     }
 
 }

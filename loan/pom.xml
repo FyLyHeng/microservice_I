@@ -9,21 +9,35 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fylyheng.corebacking</groupId>
-	<artifactId>loan</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>loan</name>
+	<artifactId>loan_service</artifactId>
+	<version>1.0.0</version>
+	<name>loan_service</name>
 	<description>Loan project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.6.0</version>
+			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 		<dependency>
@@ -47,5 +61,27 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>dev</build.profile.id>
+				<profileActive>dev</profileActive>
+				<rp.build.warname>ROOT</rp.build.warname>
+			</properties>
+		</profile>
+		<profile>
+			<id>staging</id>
+			<properties>
+				<build.profile.id>staging</build.profile.id>
+				<profileActive>staging</profileActive>
+				<rp.build.warname>loan_service</rp.build.warname>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>

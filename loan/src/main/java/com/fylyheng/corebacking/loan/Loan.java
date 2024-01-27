@@ -1,15 +1,19 @@
 package com.fylyheng.corebacking.loan;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
+//import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
-@Document
+
 @Data
+@Entity
 public class Loan {
 
+    @Id
     private Long loanId;
     private String loanNumber;
     private String loanType;
