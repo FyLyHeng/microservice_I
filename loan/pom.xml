@@ -82,6 +82,14 @@
 				<rp.build.warname>loan_service</rp.build.warname>
 			</properties>
 		</profile>
+		<profile>
+			<id>uat</id>
+			<properties>
+				<build.profile.id>uat</build.profile.id>
+				<profileActive>uat</profileActive>
+				<rp.build.warname>loan_service</rp.build.warname>
+			</properties>
+		</profile>
 	</profiles>
 
 </project>

@@ -1,0 +1,21 @@
+Ref:
+When you run two or more containers in the same Docker network,
+it means that these containers are connected to the same logical network,
+allowing them to communicate with each other.
+
+Docker provides a network isolation mechanism, and containers
+within the same network can easily discover and communicate with each other using their container names as hostnames.
+
+
+# Create a custom network
+docker network create my_network
+
+# Run containers in the same network
+docker run --network=my_network --name container1 image1
+docker run --network=my_network --name container2 image2
+
+
+Example with loan_service we crate a custom network name 'local_service'
+
+# docker network create local_server
+
