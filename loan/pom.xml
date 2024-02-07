@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fylyheng.corebacking</groupId>
-	<artifactId>loan_service</artifactId>
+	<artifactId>loan</artifactId>
 	<version>1.0.0</version>
 	<name>loan_service</name>
 	<description>Loan project for Spring Boot</description>

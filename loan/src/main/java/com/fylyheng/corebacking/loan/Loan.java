@@ -4,8 +4,6 @@ package com.fylyheng.corebacking.loan;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
-//import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDate;
 
 

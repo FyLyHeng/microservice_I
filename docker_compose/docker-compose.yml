@@ -12,7 +12,7 @@ services:
     volumes:
       - data:/var/lib/postgresql/data
 
-#pg_admin is the web ui base same as Pgadmin
+#pg_admin is the web ui base same as Pgadmin // localhost:5050/
   pg_admin:
       image: dpage/pgadmin4:6
       environment:

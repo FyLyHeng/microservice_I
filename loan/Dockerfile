@@ -13,6 +13,3 @@ ENTRYPOINT ["java", "-jar", "/loan_service-1-0-0.jar"]
 # docker run -p 8103:8103 --name loan_service fylyheng/cb-loan-service
 # docker run --network bridge -p 8103:8103 --name loan_service fylyheng/cb-loan-service
 # docker run --network local_server -p 8103:8103 --name loan_service fylyheng/cb-loan-service
-
-# docker exec -it loan_service ping postgres_db
-
