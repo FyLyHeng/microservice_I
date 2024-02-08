@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  configserver:
+    image: fylyheng/cb-config-server:latest
+    ports:
+      - "8071:8071"
+    networks:
+      - cb-network
+    logging:
+      driver: none
+
+
+  account_service:
+    image: fylyheng/cb-account-service:latest
+    ports:
+      - "8102:8102"
+    networks:
+      - cb-network
+    depends_on:
+      - configserver
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 1m
+        max_attempts: 3
+        window: 120s
+
+    logging:
+      driver: none
+
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+networks:
+  cb-network:
