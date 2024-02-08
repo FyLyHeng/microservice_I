@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.beans.factory.annotation.Value;
 
 
 @RestController
@@ -16,9 +15,6 @@ import org.springframework.beans.factory.annotation.Value;
 public class ConfigController {
 
     private final AccountServerConfig config;
-
-    @Value("${account.build.version}")
-    private String accountBuildVersion;
 
     @Autowired
     public ConfigController(AccountServerConfig accountServerConfig) {
@@ -40,8 +36,6 @@ public class ConfigController {
 
         System.out.println("msg0 :: "+config.getMsg());
         System.out.println("ver1 :: "+config.getBuildVersion());
-        System.out.println("ver2 :: "+accountBuildVersion);
-
 
         String json = objectWriter.writeValueAsString(properties);
 
