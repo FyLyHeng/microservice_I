@@ -46,6 +46,21 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
+				<configuration>
+					<image>
+						<builder>paketobuildpacks/builder:0.1.266-tiny</builder>
+						<env>
+							<BP_JVM_VERSION>17</BP_JVM_VERSION>
+							<BP_OPENTELEMETRY_ENABLED>true</BP_OPENTELEMETRY_ENABLED>
+						</env>
+						<name>fylyheng/cb-config-server:latest</name>
+					</image>
+					<layers>
+						<enabled>true</enabled>
+					</layers>
+				</configuration>
+
 			</plugin>
 		</plugins>
 	</build>

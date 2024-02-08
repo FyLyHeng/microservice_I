@@ -1,0 +1,7 @@
+
+#This command using rebuild jar file and rebuild docker image
+# mvn clean package
+# mvn spring-boot:build-image
+
+#mvn clean package spring-boot:build-image
+
